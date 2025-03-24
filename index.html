@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Rhianna Shanti</title>
+    
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+       
+p {
+      text-align: justify;
+      width: 80%;
+      margin: auto; 
+    }
+header {
+    background-color: #1e1e1e;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background: #1e1e1e;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #fe75ce;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    animation: slideIn 1s ease-in-out, glowImg 1.5s infinite alternate;
+    box-shadow: 0 0 15px #ff38cd, 0 0 30px #ff38cd, 0 0 45px #ff38cd;
+}
+
+@keyframes glowImg {
+    from {
+        box-shadow: 0 0 15px #ff38cd, 0 0 30px #ff38cd, 0 0 45px #ff38cd;
+    }
+    to {
+        box-shadow: 0 0 25px #ff38cd, 0 0 40px #ff38cd, 0 0 55px #ff38cd;
+    }
+}
+
+.typing-animation::after {
+    content: '|';
+    display: inline-block;
+    animation: blink 0.7s infinite;
+}
+
+.projects {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.project {
+    background: #000000;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 200px;
+    text-align: center;
+    animation: popUp 1s ease-in-out;
+    cursor: pointer;
+}
+
+.project img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.project:hover,
+.about-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #ff7be2;
+}
+
+.about-box {
+    background: #000000;
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%;
+    margin: 20px auto;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+    transition: box-shadow 0.3s;
+}
+
+/* Timeline Styles */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+  padding: 80px 20px;
+}
+
+
+.timeline h2 {
+    font-size: 26px;
+    margin-bottom: 30px;
+}
+
+.timeline-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+
+.timeline-item {
+    background-image: linear-gradient(rgb(176, 136, 240), white);
+    color: rgb(0, 0, 0);
+    padding: 15px;
+    border-radius: 8px;
+    width: 45%;
+    margin: 10px 0;
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-in-out;
+    
+}
+.timeline-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #ff21e1;
+
+}
+
+
+.timeline-item .date {
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+}
+
+.timeline-item:nth-child(odd) {
+    align-self: flex-start;
+}
+
+.timeline-item:nth-child(even) {
+    align-self: flex-end;
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a img {
+    width: 30px;
+    height: 30px;
+    margin: 0 20px;
+    transition: transform 0.3s ease;
+}
+
+.social-links a img:hover {
+    transform: scale(1.1);
+
+}
+.contact a img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #ffffff;
+
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes popUp {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+.sparkle-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+            background: url('ggif.gif') repeat;
+            background-size: cover;
+}
+
+
+
+
+
+       
+    </style>
+</head>
+<body>
+    <div class="sparkle-container"></div> 
+    <header>
+        <nav>
+            <div class="logo">Rhianna Shanti</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            
+            </ul>
+
+
+        </nav>
+    </header>
+    
+    <section id="home" class="hero">
+        <div class="content">
+            <img src="shanti.jpg" alt="profile picture">
+            <h1 class="typing-animation"> Hello World, I am Rihanna Shanti Oroyan</h1>
+            
+            <p style="text-align: center;">Welcome to my personal website.</p>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <div class="about-box">
+            <p>I'm Rhianna Shanti Oroyan, a Grade 11 student specializing in Information and Communications Technology Programming. I'm passionate about dancing, enjoy editing on Canva, and am currently diving into filmmaking techniques. <br>I find joy in expressing my creativity through graphic design and video editing. My interest in technology allows me to explore new software and tools that enhance my skills. In the future, I aspire to become a multimedia artist, combining my love for technology and the arts to create impactful content. <br>
+
+
+                <br><p style="color: #ff9ae6;">Vision:</p>
+                <p style="text-align: justify;"><br>To become a highly skilled ICT programmer and multimedia artist, utilizing innovative technology to create digital solutions and artistic content that inspire and connect people globally. <br>
+                
+
+               <br><p style="color: #ff9ae6;">Mission:</p>
+
+                <p style="text-align: justify;"><br>- To continuously enhance my programming and design skills through hands-on projects and collaboration.  
+                <br>- To explore emerging technologies and creative platforms to produce high-quality, engaging content.  
+                <br>- To contribute to the ICT community by sharing knowledge and supporting others in their technological journey.  
+                <br>- To bridge technology and art, creating meaningful and innovative digital experiences.</p>
+    </section>
+
+    
+   
+    <br>
+    <section id="skills" class="skills">
+        <h2>SKILLS</h2>
+        <div class="projects">
+            <div class="project">
+                <img src="html.png" alt="HTML">
+                <p style="text-align: center;">HTML</p>
+            </div>
+            <div class="project">
+                <img src="C:\Users\NNCHS-SHS\Downloads\css-3.png" alt="CSS">
+                <p style="text-align: center;">CSS</p>
+            </div>
+            <div class="project">
+                <img src="c:\Users\NNCHS-SHS\Downloads\java-script.png" alt="JavaScript">
+                <p style="text-align: center;">JAVASCRIPT</p>
+            </div>
+       
+    
+        </div>
+    </section>
+
+    <section id="experience" class="timeline">
+        <h2>Education</h2>
+        <div class="timeline-container">
+            <div class="timeline-item">
+                <div class="date"> 2024- 2025</div>
+                <h3>Nabunturan National Comprehensive High School</h3>
+                <p style="text-align: center;">Grade 11 Senior High School - ICT Programming </p>
+            </div>
+            <div class="timeline-item">
+                <div class="date"> 2020 - 2024</div>
+                <h3>Nabunturan National Comprehensive High School - Junior High School</h3>
+                <p style="text-align: center;">Special Program in the Arts - Dance-Theatre Arts</p>
+            </div>
+            <div class="timeline-item">
+                <div class="date">2014 - 2020</div>
+                <h3>Assumption College of Nabunturan</h3>
+                <p style="text-align: center;">Elementary Student</p>
+            </div>
+           
+            <section id="contact" class="contact">
+                    <h2>CONTACT</h2>
+                    <p style="text-align: center;">Reach out to me on social media</p>
+                        <div style="margin-top: 30px;">
+                            <a href="https://www.facebook.com/share/19ZKZSEcBz/?mibextid=wwXIfr" target="_blank">
+                                <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" style="width:40px; height:40px; margin: 0 10px;">
+                            </a>
+                            <a href="https://www.instagram.com/kvslvrr?igsh=YnkydTY0cnQ4NjRp&utm_source=qr" target="_blank">
+                                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" style="width:40px; height:40px; margin: 0 10px;">
+                            </a>
+                            <a href="https://github.com/thvshan" target="_blank">
+                                <img src="C:\Users\NNCHS-SHS\Downloads\github.png" alt="Github" style="width: 40px; height: 40px; margin: 0 10px;">
+                            </a>
+                    
+    
+                    
+                        
+^
+       
+       
+    </section>
+
+    <footer>
+       <br>
+        <br><p style="text-align: center;">&copy; 2025 Rhianna Shanti. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let items = document.querySelectorAll(".timeline-item");
+            function checkScroll() {
+                items.forEach(item => {
+                    let rect = item.getBoundingClientRect();
+                    if (rect.top < window.innerHeight - 100) {
+                        item.style.opacity = 1;
+                        item.style.transform = "translateY(0)";
+                    }
+                });
+            }
+            window.addEventListener("scroll", checkScroll);
+            checkScroll();
+        });
+       
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let items = document.querySelectorAll(".timeline-item");
+    
+            function checkScroll() {
+                items.forEach(item => {
+                    let rect = item.getBoundingClientRect();
+                    if (rect.top < window.innerHeight - 100) {
+                        item.style.opacity = 1;
+                        item.style.transform = "translateY(0)";
+                    }
+                });
+            }
+    
+            window.addEventListener("scroll", checkScroll);
+            checkScroll();
+    
+            // Smooth scroll for Education navbar link
+            document.querySelector(".nav-links a[href='#education']").addEventListener("click", function (e) {
+                e.preventDefault(); // Prevent default link behavior
+                document.querySelector("#experience").scrollIntoView({
+                    behavior: "smooth"
+                });
+            });
+        });
+    </script>
+   
+ 
+    
+    
+</body>
+</html>
